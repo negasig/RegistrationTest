@@ -5,6 +5,7 @@ require_once "config.php";
 // Define variables and initialize with empty values
 $username = $password = $confirm_password = "";
 $username_err = $password_err = $confirm_password_err = "";
+$successmsg="";
  
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -35,6 +36,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 } else{
                     $username = trim($_POST["username"]);
                 }
+
             } else{
                 echo "Oops! Something went wrong. Please try again later.";
             }
@@ -80,7 +82,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             // Attempt to execute the prepared statement
             if(mysqli_stmt_execute($stmt)){
                 // Redirect to login page
-                header("location: login.php");
+                $successmsg="Successfully registered";
             } else{
                 echo "Oops! Something went wrong. Please try again later.";
             }
@@ -109,7 +111,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <body>
     <div class="wrapper">
         <h2>Sign Up</h2>
-        <p>Please fill this form to create an account.</p>
+        <p id='successmsg'><?php echo $successmsg ?></p>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="form-group">
                 <label>Username</label>
