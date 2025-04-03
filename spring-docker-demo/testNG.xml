@@ -3,8 +3,8 @@
 <suite name="Group Suite">
     <test name="Group Test">
         <classes>
-            <class name="Tests.Successtest"/>
             <class name="Tests.LoginTest"/>
+            <class name="Tests.Successtest"/>
         </classes>
     </test>
 </suite>

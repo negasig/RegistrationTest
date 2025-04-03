@@ -10,7 +10,7 @@ public class Registrationpage extends Baseclass{
         private By confirmpass=By.xpath("/html/body/div/form/div[3]/input");
         private By registerbtn=By.xpath("/html/body/div/form/div[4]/input[1]");
         private By successmege=By.xpath("//*[@id=\"successmsg\"]");
-
+        private By isregisterd=By.xpath("//*[@id=\"userexist\"]");
         public void setUsernam(String username){
             set(usernam, username);
         }
@@ -26,5 +26,8 @@ public class Registrationpage extends Baseclass{
 
         public String getSuccessMessage(){
             return find(successmege).getText();
+        }
+        public String checkuserisregisterd(){
+           return find(isregisterd).getText();
         }
     }

@@ -3,12 +3,13 @@
 <suite name="Failed suite [Group Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Group Test(failed)">
     <classes>
-      <class name="Tests.LoginTest">
+      <class name="Tests.Successtest">
         <methods>
-          <include name="testInvalidcredientials"/>
           <include name="setDriver"/>
+          <include name="checkUserisAlkreadyRegisterd"/>
+          <include name="SuccessfulRegistrationTest"/>
         </methods>
-      </class> <!-- Tests.LoginTest -->
+      </class> <!-- Tests.Successtest -->
     </classes>
   </test> <!-- Group Test(failed) -->
 </suite> <!-- Failed suite [Group Suite] -->
