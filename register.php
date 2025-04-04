@@ -111,7 +111,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <body>
     <div class="wrapper">
         <h2>Sign Up</h2>
-        <p id='successmsg' style="color:red"><?php echo $successmsg ?></p>
+        <p id='successmsg' style="color:black"><?php echo $successmsg ?> </p>
         <p id='userexist' style="color:red"><?php echo $username_err; ?></p>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="form-group">

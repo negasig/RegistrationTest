@@ -1,7 +1,6 @@
-    package login;
+    package Selenium;
 
     import org.openqa.selenium.By;
-    import org.springframework.util.Assert;
 
     public class Products extends Baseclass{
 

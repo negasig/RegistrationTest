@@ -1,6 +1,6 @@
-package login.Junit;
+package Selenium;
 
-import login.Baseclass;
+import Selenium.Baseclass;
 import org.openqa.selenium.By;
 public class Registrationpage extends Baseclass{
 
@@ -23,7 +23,6 @@ public class Registrationpage extends Baseclass{
         public void clicRegister(){
             click(registerbtn);
         }
-
         public String getSuccessMessage(){
             return find(successmege).getText();
         }

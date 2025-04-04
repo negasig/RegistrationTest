@@ -1,13 +1,10 @@
 package Tests;
 
 
-import jakarta.annotation.Priority;
-import login.Baseclass;
-import login.Junit.Login;
-import login.LoginPage;
-import login.Products;
+import Selenium.Baseclass;
+import Selenium.LoginPage;
+import Selenium.Products;
 import org.junit.Assert;
-import org.junit.Before;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -26,7 +23,7 @@ protected static Products products;
 public static void setDriver(){
 driver=new ChromeDriver();
 driver.manage().window().maximize();
-driver.get("http://localhost/MyProject/login.php");
+driver.get("http://localhost/RegistrationTest/login.php");
  baseclass=new Baseclass();
  baseclass.setDriver(driver);
  loginPage =new LoginPage();

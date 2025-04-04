@@ -1,7 +1,6 @@
 package Tests;
 
-import login.Baseclass;
-import login.Junit.Login;
+import Selenium.Baseclass;
 
 public class BaseTest extends Baseclass {
 
