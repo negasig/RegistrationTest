@@ -32,16 +32,16 @@ public class RegistrationTest extends Registrationpage {
             wait=new WebDriverWait(driver,Duration.ofSeconds(15));
             baseclass.setDriverWait(wait);
         }
-        @Test(priority = 2)
+        @Test(priority = 1)
         public void SuccessfulRegistrationTest(){
-            registrationpage.setUsernam("lemicvbmftyjutyufhgfosd");
+            registrationpage.setUsernam("lemicvbmftyjuufhgfosd");
             registrationpage.setPassword("1345786");
             registrationpage.setConfirmpass("1345786");
             registrationpage.clicRegister();
 
-            Assert.assertTrue(registrationpage.getSuccessMessage().contains("suc"),"user is already registerd");
+            Assert.assertTrue(registrationpage.getSuccessMessage().contains("Success"));
         }
-        @Test(priority = 1)
+        @Test(priority = 2)
         public void checkUserisAlreadyRegisterd(){
             registrationpage.setUsernam("negasi");
             registrationpage.setPassword("1345786");
