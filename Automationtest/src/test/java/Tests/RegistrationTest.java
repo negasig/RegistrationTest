@@ -24,7 +24,7 @@ public class RegistrationTest extends Registrationpage {
         public static void setDriver(){
             driver=new ChromeDriver();
             driver.manage().window().maximize();
-            driver.get("http://localhost/RegistrationTest/register.php");
+            driver.get("http://localhost/RegistrationTest/Frontend/register.php");
             baseclass=new Baseclass();
             baseclass.setDriver(driver);
             products=new Products();
@@ -34,9 +34,9 @@ public class RegistrationTest extends Registrationpage {
         }
         @Test(priority = 1)
         public void SuccessfulRegistrationTest(){
-            registrationpage.setUsernam("lemicvbmftyjuufhgfosd");
-            registrationpage.setPassword("1345786");
-            registrationpage.setConfirmpass("1345786");
+            registrationpage.setUsernam("habena");
+            registrationpage.setPassword("123456");
+            registrationpage.setConfirmpass("123456");
             registrationpage.clicRegister();
 
             Assert.assertTrue(registrationpage.getSuccessMessage().contains("Success"));

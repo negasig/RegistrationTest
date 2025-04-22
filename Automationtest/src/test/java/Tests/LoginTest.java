@@ -23,7 +23,7 @@ protected static Products products;
 public static void setDriver(){
 driver=new ChromeDriver();
 driver.manage().window().maximize();
-driver.get("http://localhost/RegistrationTest/login.php");
+driver.get("http://localhost/RegistrationTest/Frontend/login.php");
  baseclass=new Baseclass();
  baseclass.setDriver(driver);
  loginPage =new LoginPage();
@@ -33,7 +33,7 @@ baseclass.setDriverWait(wait);
 }
    @Test(priority = 1)
     public void testInvalidcredientials(){
-    loginPage.setUsernam("negufkl");
+    loginPage.setUsernam("negufchjvkl");
     loginPage.setPassword("rtfhgjhkn");
     loginPage.clickLogin();
     String actualresult=loginPage.getErrorMessage();
@@ -41,7 +41,7 @@ baseclass.setDriverWait(wait);
     }
     @Test(priority = 2)
  public void checkSucessfullLogin(){
- loginPage.setUsernam("negasi");
+ loginPage.setUsernam("haben");
  loginPage.setPassword("123456");
  loginPage.clickLogin();
  Assert.assertTrue(products.isProductpagedisplayed());
