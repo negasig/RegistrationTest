@@ -3,8 +3,11 @@ import Selenium.Baseclass;
 import Selenium.Registrationpage;
 import Selenium.LoginPage;
 import Selenium.Products;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
@@ -20,6 +23,7 @@ public class RegistrationTest extends Registrationpage {
         protected static Products products;
         protected static Registrationpage registrationpage;
         protected static WebDriverWait wait;
+
         @BeforeClass
         public static void setDriver(){
             driver=new ChromeDriver();
@@ -29,26 +33,29 @@ public class RegistrationTest extends Registrationpage {
             baseclass.setDriver(driver);
             products=new Products();
             registrationpage=new Registrationpage();
-            wait=new WebDriverWait(driver,Duration.ofSeconds(15));
+            wait=new WebDriverWait(driver,Duration.ofSeconds(20));
             baseclass.setDriverWait(wait);
         }
         @Test(priority = 1)
-        public void SuccessfulRegistrationTest(){
-            registrationpage.setUsernam("habena");
+        public void SuccessfulRegistrationTest() throws InterruptedException {
+            registrationpage.setUsernam("geriso");
             registrationpage.setPassword("123456");
             registrationpage.setConfirmpass("123456");
+            registrationpage.setCountry("Nigeria");
             registrationpage.clicRegister();
 
             Assert.assertTrue(registrationpage.getSuccessMessage().contains("Success"));
         }
         @Test(priority = 2)
-        public void checkUserisAlreadyRegisterd(){
+        public void checkUserisAlreadyRegisterd() throws InterruptedException {
             registrationpage.setUsernam("negasi");
-            registrationpage.setPassword("1345786");
-            registrationpage.setConfirmpass("1345786");
+            registrationpage.setPassword("123456");
+            registrationpage.setConfirmpass("123456");
+            registrationpage.setCountry("USA");
             registrationpage.clicRegister();
             String actual=registrationpage.checkuserisregisterd();
             Assert.assertTrue(actual.toLowerCase().contains("taken"));
+            driver.quit();
         }
     }
 
