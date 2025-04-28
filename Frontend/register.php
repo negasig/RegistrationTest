@@ -27,7 +27,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             // Set parameters
             $param_username = trim($_POST["username"]);
             $country=trim($_POST["nationality"]);
-          
+            $gender=trim($_POST["gender"]);
           
             
             // Attempt to execute the prepared statement
@@ -70,14 +70,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }
     
     // Check input errors before inserting in database
-    if(empty($username_err) && empty($password_err) && empty($confirm_password_err && empty($country))){
+    if(empty($username_err) && empty($password_err) && empty($confirm_password_err && empty($country) &&  empty($gender))){
         
         // Prepare an insert statement
-        $sql = "INSERT INTO users (username, nationality, password) VALUES (?, ?,?)";
+        $sql = "INSERT INTO users (username, nationality, password,gender) VALUES (?, ?,?,?)";
          
         if($stmt = mysqli_prepare($link, $sql)){
             // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "sss", $param_username, $country,$param_password);
+            mysqli_stmt_bind_param($stmt, "ssss", $param_username, $country,$param_password,$gender);
             
             // Set parameters
             $param_username = $username;
@@ -145,6 +145,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <option value="Eritrea">Eritrea</option>
                 <option value="Somalia">Somalia</option>
                 <option value="USA">USA</option>
+                </select>
+            </div> 
+            <div class="form-group">
+                <label>Gender</label></br>
+                <label>Male</label>
+                <input type="radio" name="gender" value="male" id="male" />
+                <label>Female</label>
+                <input type="radio" name="gender" value="female" id="female"/>
                 </select>
             </div> 
             <div class="form-group">

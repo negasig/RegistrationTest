@@ -33,7 +33,7 @@ baseclass.setDriverWait(wait);
 }
    @Test(priority = 1)
     public void testInvalidcredientials(){
-    loginPage.setUsernam("negufchjvkl");
+    loginPage.setUsernam("Hana");
     loginPage.setPassword("rtfhgjhkn");
     loginPage.clickLogin();
     String actualresult=loginPage.getErrorMessage();
@@ -41,7 +41,7 @@ baseclass.setDriverWait(wait);
     }
     @Test(priority = 2)
  public void checkSucessfullLogin(){
- loginPage.setUsernam("negasi");
+ loginPage.setUsernam("geriso");
  loginPage.setPassword("123456");
  loginPage.clickLogin();
  Assert.assertTrue(products.isProductpagedisplayed());

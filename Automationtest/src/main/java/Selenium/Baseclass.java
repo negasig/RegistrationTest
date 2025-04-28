@@ -19,6 +19,7 @@ public class Baseclass {
     }
     protected WebElement find(By locator){
         wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+
                 return driver.findElement(locator);
     }
     protected void set(By locator, String value){
@@ -29,9 +30,9 @@ public class Baseclass {
 
         Select s=new Select(find(locator));
         s.selectByVisibleText(value);
-
     }
     protected void click(By locator){
+        wait.until(ExpectedConditions.elementToBeClickable(locator));
        JavascriptExecutor js=(JavascriptExecutor) driver;
         js.executeScript("arguments[0].click();", find(locator));
         //find(locator).click();
