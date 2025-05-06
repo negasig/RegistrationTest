@@ -45,7 +45,13 @@ baseclass.setDriverWait(wait);
  loginPage.setPassword("123456");
  loginPage.clickLogin();
  Assert.assertTrue(products.isProductpagedisplayed());
- driver.quit();
+
     }
+ @Test(priority = 3)
+ public void verifylogout(){
+   loginPage.clickLogout();
+  Assert.assertTrue(loginPage.isLogindisplayed());
+  driver.quit();
+ }
 
 }

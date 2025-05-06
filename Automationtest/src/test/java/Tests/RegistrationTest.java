@@ -38,7 +38,7 @@ public class RegistrationTest extends Registrationpage {
         }
         @Test(priority = 1)
         public void SuccessfulRegistrationTest() throws InterruptedException {
-            registrationpage.setUsernam("negasioiu");
+            registrationpage.setUsernam("Gidenu");
             registrationpage.setPassword("123456");
             registrationpage.setConfirmpass("123456");
             registrationpage.setCountry("Nigeria");
