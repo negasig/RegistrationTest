@@ -41,7 +41,7 @@ baseclass.setDriverWait(wait);
     }
     @Test(priority = 2)
  public void checkSucessfullLogin(){
- loginPage.setUsernam("geriso");
+ loginPage.setUsernam("negasi");
  loginPage.setPassword("123456");
  loginPage.clickLogin();
  Assert.assertTrue(products.isProductpagedisplayed());

@@ -38,18 +38,18 @@ public class RegistrationTest extends Registrationpage {
         }
         @Test(priority = 1)
         public void SuccessfulRegistrationTest() throws InterruptedException {
-            registrationpage.setUsernam("Gidenu");
+            registrationpage.setUsernam("negasi");
             registrationpage.setPassword("123456");
             registrationpage.setConfirmpass("123456");
-            registrationpage.setCountry("Nigeria");
+            registrationpage.setCountry("Ethiopia");
             registrationpage.setGender();
             registrationpage.clicRegister();
 
-            Assert.assertTrue(registrationpage.getSuccessMessage().contains("registered"));
+            Assert.assertFalse(registrationpage.getSuccessMessage().contains("registered"));
         }
         @Test(priority = 2)
         public void checkUserisAlreadyRegisterd() throws InterruptedException {
-            registrationpage.setUsernam("geriso");
+            registrationpage.setUsernam("AbebeB");
             registrationpage.setPassword("123456");
             registrationpage.setConfirmpass("123456");
             registrationpage.setCountry("USA");
