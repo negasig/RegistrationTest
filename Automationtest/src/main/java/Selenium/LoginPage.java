@@ -28,15 +28,6 @@ public class LoginPage extends Baseclass {
      return find(loginheader).isDisplayed();
     }
 
-<<<<<<< HEAD
-   public Boolean isLogi(){
-
-        return find(loginheader).isDisplayed();
-=======
-   public Bolean isLogi(){
-     return find(loginheader).isDisplayed();
->>>>>>> 61411939f805f54822c7cb96e614ea63e1ee04ce
-    }
     public String getErrorMessage(){
         return find(error).getText();
     }
