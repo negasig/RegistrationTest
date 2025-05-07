@@ -28,8 +28,9 @@ public class LoginPage extends Baseclass {
      return find(loginheader).isDisplayed();
     }
 
-   public String isLogi(){
-     return find(loginheader).isDisplayed();
+   public Boolean isLogi(){
+
+        return find(loginheader).isDisplayed();
     }
     public String getErrorMessage(){
         return find(error).getText();
